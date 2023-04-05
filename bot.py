@@ -47,7 +47,7 @@ async def get_text(message):
     await msg.edit_text("Ожидаем ответа...")
     req = urllib.request.Request(API_URL, data=params, headers=headers)
     response = urllib.request.urlopen(req)
-    res = response.read().decode('utf8')
+    res = response.read().decode('utf8')  #Аааааня я люблю тебя, ты моя радость
     result = json.loads(res)
     await msg.edit_text(f"<b>{message.text}</b> {result['text']}\n\nРазработчик: @CTOHKC", parse_mode='html')
     
